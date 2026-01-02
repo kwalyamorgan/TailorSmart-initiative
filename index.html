@@ -31,7 +31,8 @@
     <header class="navbar" role="navigation">
         <div class="container">
             <a href="#hero" class="logo" aria-label="TailorSmart Initiative Home">
-                <i class="fas fa-scissors" aria-hidden="true"></i> TailorSmart Initiative
+                <img src="images/logo.png" alt="TailorSmart Initiative" class="logo-img">
+                <span>TailorSmart Initiative</span>
             </a>
             <nav>
                 <ul class="nav-links">
@@ -146,7 +147,7 @@
             <div class="impact-content">
                 <div class="impact-stats">
                     <div class="impact-stat">
-                        <span class="stat-number">5</span>
+                        <span class="stat-number">4</span>
                         <span class="stat-label">Direct Women Artisans</span>
                     </div>
                     <div class="impact-stat">
@@ -179,7 +180,7 @@
     <!-- Before the Project: Image 1 -->
     <div class="timeline-step">
       <button class="gallery-item" data-src="images/before1.jpg" aria-label="Participants before project">
-        <img src="images/before1_thumb.jpg" alt="Participants facing economic hardship before the project" loading="lazy">
+        <img src="images/before1.jpg" alt="Participants facing economic hardship before the project" loading="lazy">
       </button>
       <div class="caption">Before — Living in Poverty</div>
     </div>
@@ -187,7 +188,7 @@
     <!-- Before the Project: Image 2 -->
     <div class="timeline-step">
       <button class="gallery-item" data-src="images/before2.jpg" aria-label="Community conditions before project">
-        <img src="images/before2_thumb.jpg" alt="Community conditions and challenges before empowerment" loading="lazy">
+        <img src="images/before2.jpg" alt="Community conditions and challenges before empowerment" loading="lazy">
       </button>
       <div class="caption">Before — Limited Opportunities</div>
     </div>
@@ -202,40 +203,40 @@
 
     <!-- Step 2 -->
     <div class="timeline-step">
-      <button class="gallery-item" data-src="images/gallery2.jpg" aria-label="Training session">
-        <img src="images/gallery2_thumb.jpg" alt="Pattern cutting demonstration" loading="lazy">
+      <button class="gallery-item" data-src="images/training.jpg" aria-label="Training session">
+        <img src="images/training.jpg" alt="Pattern cutting demonstration" loading="lazy">
       </button>
       <div class="caption">Step 2 — Training Begins</div>
     </div>
 
     <!-- Step 3 -->
     <div class="timeline-step">
-      <button class="gallery-item" data-src="images/gallery3.jpg" aria-label="Community handover">
-        <img src="images/gallery3_thumb.jpg" alt="Handover of sewing machine to graduate" loading="lazy">
+      <button class="gallery-item" data-src="images/handover.jpg" aria-label="Community handover">
+        <img src="images/handover.jpg" alt="Handover of sewing machine to graduate" loading="lazy">
       </button>
       <div class="caption">Step 3 — Tools for Success</div>
     </div>
 
     <!-- Step 4 -->
     <div class="timeline-step">
-      <button class="gallery-item" data-src="images/gallery4.jpg" aria-label="Market linkage">
-        <img src="images/gallery4_thumb.jpg" alt="Artisans selling finished garments" loading="lazy">
+      <button class="gallery-item" data-src="images/selling.jpg" aria-label="Market linkage">
+        <img src="images/selling.jpg" alt="Artisans selling finished garments" loading="lazy">
       </button>
       <div class="caption">Step 4 — Entering the Market</div>
     </div>
 
     <!-- Step 5 -->
     <div class="timeline-step">
-      <button class="gallery-item" data-src="images/gallery5.jpg" aria-label="Mentorship">
-        <img src="images/gallery5_thumb.jpg" alt="Business mentorship session" loading="lazy">
+      <button class="gallery-item" data-src="images/mentorship.jpg" aria-label="Mentorship">
+        <img src="images/mentorship.jpg" alt="Business mentorship session" loading="lazy">
       </button>
       <div class="caption">Step 5 — Guided Growth</div>
     </div>
 
     <!-- Step 6 -->
     <div class="timeline-step">
-      <button class="gallery-item" data-src="images/gallery6.jpg" aria-label="Group photo">
-        <img src="images/gallery6_thumb.jpg" alt="Group photo of graduates and project lead" loading="lazy">
+      <button class="gallery-item" data-src="images/graduate.jpg" aria-label="Group photo">
+        <img src="images/graduate.jpg" alt="Group photo of graduates and project lead" loading="lazy">
       </button>
       <div class="caption">Step 6 — From Grass to Grace</div>
     </div>
@@ -247,13 +248,6 @@
 
             </div>
         </section>
-
-        <!-- Lightbox (place just before scripts) -->
-        <div id="lightbox" class="lightbox" aria-hidden="true" tabindex="-1" style="display:none;">
-            <button class="lightbox-close" aria-label="Close gallery">&times;</button>
-            <img class="lightbox-img" alt="">
-            <div class="lightbox-caption small-text"></div>
-        </div>
 
         <!-- Implementation Plan Section -->
         <section id="plan" class="section section-alt">
@@ -310,10 +304,22 @@
                     <div class="contact-details">
                         <p><strong>Email:</strong> <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a></p>
                         <p><strong>Phone:</strong> <a href="tel:+254748052811">0748 052 811</a></p>
-                        <p><strong>Community Partner:</strong> Mukuru Kwa Njenga Area Chief</p>
+                       
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Community Snapshot -->
+        <section id="community" class="section container">
+            <div class="section-header">
+                <h2>Mukuru Kwa Njenga Today</h2>
+                <p class="section-subtitle">A glimpse of the community we serve and aim to uplift</p>
+            </div>
+            <figure class="community-figure">
+                <img src="images/mukuru.jpg" alt="Panoramic view of Mukuru Kwa Njenga settlement" loading="lazy">
+                <figcaption class="small-text text-center">A general view of Mukuru Kwa Njenga, underscoring the need for sustainable economic opportunities.</figcaption>
+            </figure>
         </section>
 
         <!-- Support Section -->
@@ -321,42 +327,33 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Invest in a Woman's Future</h2>
-                    <p class="section-subtitle">Your contribution directly funds the equipment and training needed to break the cycle of poverty</p>
+                    <p class="section-subtitle">Any amount is welcome. Your contribution directly funds the equipment and training needed to break the cycle of poverty.</p>
                 </div>
-                <div class="donation-tiers">
-                    <article class="tier">
-                        <div class="tier-icon">
-                            <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+
+                <div class="donation-card-simple">
+                    <div class="tier-icon">
+                        <i class="fas fa-heart" aria-hidden="true" style="font-size: 3rem; color: #e91e63; margin-bottom: 1rem;"></i>
+                    </div>
+                    
+                    <div class="mobile-only-cta">
+                        <a href="tel:*334*2*1*0748052811%23" class="btn btn-primary btn-large">
+                            <i class="fas fa-mobile-alt"></i> Open M-Pesa Menu
+                        </a>
+                        <p class="small-text mt-1">(Mobile only: Dials *334# to Send Money)</p>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="manual-payment">
+                        <p><strong>Send Money to:</strong></p>
+                        <div class="copy-box">
+                            <span id="phone-number">0748052811</span>
+                            <button onclick="copyNumber()" id="copy-btn" title="Copy to clipboard">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
                         </div>
-                        <div class="amount">KES 2,000</div>
-                        <p>Provides one professional iron box essential for finishing garments to professional standards.</p>
-                        <a href="#contact" class="btn btn-secondary">Donate</a>
-                    </article>
-                    <article class="tier tier-featured">
-                        <div class="tier-badge">Popular</div>
-                        <div class="tier-icon">
-                            <i class="fas fa-shapes" aria-hidden="true"></i>
-                        </div>
-                        <div class="amount">KES 7,500</div>
-                        <p>Covers 5 rolls of quality fabric and lining materials to kickstart production.</p>
-                        <a href="#contact" class="btn btn-primary">Donate</a>
-                    </article>
-                    <article class="tier">
-                        <div class="tier-icon">
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="amount">KES 15,000</div>
-                        <p>Purchases one complete manual sewing machine for a graduate to start their business.</p>
-                        <a href="#contact" class="btn btn-secondary">Donate</a>
-                    </article>
-                </div>
-                <div class="contact-info">
-                    <h3>Make Your Contribution Today</h3>
-                    <p class="mpesa-info">
-                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                        <strong>M-Pesa: </strong> <span class="highlight">0748 052 811</span>
-                    </p>
-                    <p class="small-text">Account Name: Morgan Kwalya</p>
+                        <p class="account-name">Account Name: <strong>Morgan Kwalya</strong></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -393,6 +390,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

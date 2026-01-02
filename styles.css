@@ -15,6 +15,7 @@
     --secondary-color:  #c9a227;
     --secondary-dark:  #b08e20;
     --secondary-light: #d4b13a;
+    --copy-success: #00b894;
     
     --text-dark: #1a1a1a;
     --text-medium: #4a4a4a;
@@ -168,6 +169,12 @@ a {
     transition: var(--transition-fast);
 }
 
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
 .logo:hover {
     color: var(--primary-light);
 }
@@ -177,6 +184,28 @@ a {
     list-style: none;
     gap: var(--spacing-md);
     align-items: center;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 0.35rem;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mobile-menu-toggle .hamburger-line {
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition-fast);
 }
 
 .nav-links a {
@@ -692,6 +721,29 @@ a {
     text-decoration: underline;
 }
 
+/* Community Snapshot */
+.community-figure {
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--bg-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.community-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.community-figure figcaption {
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-medium);
+    background: var(--bg-gray);
+}
+
 /* ===================================
    DONATION TIERS
    =================================== */
@@ -828,6 +880,143 @@ a {
     opacity: 0.9;
 }
 
+/* Enhanced Donation Card */
+.donation-card-simple {
+    background: var(--bg-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(13, 92, 99, 0.1);
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.donation-card-simple h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.donation-card-simple p {
+    color: var(--text-medium);
+    line-height: 1.7;
+}
+
+.donation-card-simple .tier-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto var(--spacing-sm);
+    background: linear-gradient(135deg, #ffe6ef 0%, #fff5fa 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+
+/* The M-Pesa Trigger Button */
+.mobile-only-cta .btn-large {
+    background: var(--primary-color);
+    color: var(--bg-white);
+    width: 100%;
+    max-width: 320px;
+    padding: 1.1rem;
+    font-size: 1.2rem;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(13, 92, 99, 0.2);
+}
+
+.mobile-only-cta .btn-large:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+}
+
+.manual-payment {
+    margin-top: var(--spacing-sm);
+    color: var(--text-dark);
+}
+
+/* Copy Box Styling */
+.copy-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-gray);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+    border: 1px dashed var(--primary-light);
+}
+
+#phone-number {
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+#copy-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+#copy-btn:hover {
+    background: var(--secondary-dark);
+}
+
+.account-name {
+    margin-top: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.mobile-only-cta {
+    margin-top: var(--spacing-xs);
+}
+
+.section-cta .donation-card-simple {
+    border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Divider styling */
+.donation-divider {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+
+.donation-divider::after {
+    content: "OR";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 0 15px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
 /* ===================================
    FOOTER
    =================================== */
@@ -935,7 +1124,25 @@ a {
     .nav-links {
         flex-direction: column;
         gap: var(--spacing-sm);
-        display: none; /* Consider adding mobile menu toggle */
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: var(--spacing-sm);
+        background: var(--bg-white);
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        width: min(320px, 90vw);
+        align-items: flex-start;
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: inline-flex;
     }
     
     .navbar .btn {
@@ -1072,6 +1279,12 @@ a {
 .mb-2 { margin-bottom: var(--spacing-sm); }
 .mb-3 { margin-bottom:  var(--spacing-md); }
 .mb-4 { margin-bottom: var(--spacing-lg); }
+.my-3 { margin-top: var(--spacing-md); margin-bottom: var(--spacing-md); }
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 /* Impact gallery */
 .impact-gallery {
@@ -1201,95 +1414,93 @@ a {
     }
 }
 .gallery-timeline {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 1rem;
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding: 20px 10px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--secondary-color) transparent;
+}
+
+.gallery-timeline::-webkit-scrollbar {
+        height: 6px;
+}
+
+.gallery-timeline::-webkit-scrollbar-thumb {
+        background: var(--secondary-color);
+        border-radius: 10px;
 }
 
 .timeline-step {
-  text-align: center;
-  position: relative;
+        flex: 0 0 200px;
+        text-align: center;
+        position: relative;
 }
 
 .timeline-step img {
-  max-width: 150px;
-  border-radius: 8px;
-  border: 2px solid var(--text-light);
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  box-shadow: var(--shadow-sm);
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+        border: 3px solid var(--bg-white);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-.caption {
-  margin-top: 0.75rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 0.95rem;
-  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-  display: block;
-  opacity: 0.9;
-  letter-spacing: 0.3px;
-  line-height: 1.4;
-}
-
+.caption,
 .timeline-step .caption {
-  margin-top: 0.75rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  line-height: 1.4;
-  display: block;
-  opacity: 0.9;
-  transition: color 0.3s ease, opacity 0.3s ease;
+        margin-top: 0.75rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        line-height: 1.4;
+        display: block;
+        opacity: 0.9;
+        transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-step:hover .caption {
-  color: var(--secondary-color);
-  opacity: 1;
+        color: var(--secondary-color);
+        opacity: 1;
 }
 
 .timeline-step img:hover {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-md);
-  filter: brightness(1.05);
+        transform: scale(1.08);
+        box-shadow: var(--shadow-md);
+        filter: brightness(1.05);
 }
+
 @media (max-width: 600px) {
-  .gallery-timeline {
-    flex-direction: column;
-    gap: 1.5rem;
-    overflow-x: visible;
-  }
-  
-  .timeline-step img {
-    max-width: 100px;
-    border-radius: 6px;
-  }
-  
-  .arrow {
-    font-size: 1.5rem;
-    transform: rotate(90deg);
-  }
+        .gallery-timeline {
+                flex-direction: column;
+                gap: 1.5rem;
+                overflow-x: visible;
+        }
+    
+        .timeline-step img {
+                width: 100%;
+                height: 120px;
+                border-radius: 6px;
+        }
+    
+        .arrow {
+                font-size: 1.5rem;
+                transform: rotate(90deg);
+        }
 }
 
 @media (max-width: 768px) {
-    .gallery-grid {
-        gap: var(--spacing-md);
-    }
+        .gallery-grid {
+                gap: var(--spacing-md);
+        }
     
-    .about-image img {
-        max-height: 400px;
-    }
+        .about-image img {
+                max-height: 400px;
+        }
     
-    .sdg-icons img {
-        width: 100px;
-        height: 100px;
-    }
+        .sdg-icons img {
+                width: 100px;
+                height: 100px;
+        }
 }

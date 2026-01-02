@@ -154,7 +154,7 @@
     // SCROLL REVEAL
     const scrollReveal = {
         init() {
-            this.elements = document.querySelectorAll('.challenge-item, .solution-card, .timeline-item, .tier');
+            this.elements = document.querySelectorAll('.challenge-item, .solution-card, .timeline-item, .tier, .donation-card-simple');
             if (!this.elements || this.elements.length === 0) return;
 
             const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
@@ -179,90 +179,8 @@
         }
     };
 
-    // DONATION MODAL
-    const donationModal = {
-        init() {
-            this.createModal();
-            this.attachEventListeners();
-        },
 
-        createModal() {
-            const modalHTML = `
-                <div id="donationModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-                    <div class="modal-content">
-                        <button class="modal-close" aria-label="Close modal">&times;</button>
-                        <h2 id="modalTitle">Make a Donation</h2>
-                        <div class="modal-body">
-                            <p class="modal-description">Your contribution directly empowers women in Mukuru Kwa Njenga to build sustainable livelihoods.</p>
-                            <div class="payment-info">
-                                <div class="payment-method">
-                                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                                    <div>
-                                        <h3>M-Pesa Payment</h3>
-                                        <p class="mpesa-number">0748 052 811</p>
-                                        <p class="account-name">Account Name: Morgan Kwalya</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="payment-steps">
-                                <h3>How to Send:</h3>
-                                <ol>
-                                    <li>Go to M-Pesa on your phone</li>
-                                    <li>Select "Send Money"</li>
-                                    <li>Enter <strong>0748 052 811</strong></li>
-                                    <li>Enter your donation amount</li>
-                                    <li>Complete the transaction</li>
-                                </ol>
-                            </div>
-                            <div class="contact-confirmation">
-                                <p><i class="fas fa-envelope" aria-hidden="true"></i> Confirmation will be sent to your phone</p>
-                                <p><i class="fas fa-heart" aria-hidden="true"></i> Thank you for supporting women's empowerment!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', modalHTML);
-            this.modal = document.getElementById('donationModal');
-        },
-
-        attachEventListeners() {
-            const donateButtons = document.querySelectorAll('.tier .btn, a[href="#contact"]');
-            donateButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    this.open();
-                });
-            });
-
-            if (!this.modal) return;
-            const closeBtn = this.modal.querySelector('.modal-close');
-            if (closeBtn) closeBtn.addEventListener('click', () => this.close());
-
-            this.modal.addEventListener('click', (e) => {
-                if (e.target === this.modal) this.close();
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.modal.classList.contains('active')) this.close();
-            });
-        },
-
-        open() {
-            if (!this.modal) return;
-            this.modal.classList.add('active');
-            this.modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-        },
-
-        close() {
-            if (!this.modal) return;
-            this.modal.classList.remove('active');
-            this.modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-        }
-    };
-
+       
     // MOBILE MENU
     const mobileMenu = {
         init() {
@@ -482,6 +400,57 @@
             document.body.style.overflow = '';
         }
     };
+
+    // COPY PHONE NUMBER (for support section)
+    function copyNumber() {
+        const phone = '0748052811';
+        const btn = document.getElementById('copy-btn');
+        if (!btn) return;
+
+        const originalHtml = btn.innerHTML;
+        const originalBg = btn.style.background;
+
+        const onSuccess = () => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+            btn.style.background = 'var(--copy-success)';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = originalHtml || '<i class="fas fa-copy"></i> Copy';
+                btn.style.background = originalBg || '';
+                btn.disabled = false;
+            }, 2000);
+        };
+
+        const onFailure = (err) => {
+            console.error('Failed to copy: ', err);
+        };
+
+        const fallback = () => {
+            const temp = document.createElement('input');
+            temp.value = phone;
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+                document.execCommand('copy');
+                onSuccess();
+            } catch (err) {
+                onFailure(err);
+            }
+            temp.remove();
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(phone).then(onSuccess).catch((err) => {
+                onFailure(err);
+                fallback();
+            });
+        } else {
+            fallback();
+        }
+    }
+
+    window.copyNumber = copyNumber;
 
     // INITIALIZE
     function initializeApp() {
